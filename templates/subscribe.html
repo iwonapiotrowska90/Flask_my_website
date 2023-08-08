@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Subscribe to my email newsletter {% endblock %}
+{% block content %}
+
+  <div class="container">
+
+      {% if error_statement %}
+      <div class="alert alert-danger" role="alert">
+      {{ error_statement }}</div>
+      {% endif %}
+
+
+    <h3>Subscribe to my newsletter</h3>
+    <br/><br/>
+    <form action="dane_z_subscribe" method="POST">
+  <div class="mb-3">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    placeholder="First Name" name=first_name value="{{first_name}}">
+  </div>
+
+ <div class="mb-3">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+   placeholder="Last Name", name=last_name value="{{last_name}}">
+  </div>
+
+  <div class="mb-3">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    placeholder="Email Address" name="email" value="{{email}}">
+  </div>
+
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  </div>
+
+
+
+{% endblock %}
